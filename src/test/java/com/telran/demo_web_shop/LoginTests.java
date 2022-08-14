@@ -16,7 +16,7 @@ public class LoginTests extends TestBase{
     @Test
     public void loginUserPositiveTests() {
         login();
-        Assert.assertTrue(isElementPresent(By.xpath("//a[contains(text(),'sillertttt@gmail.com')]")));
+        Assert.assertTrue(isElementPresent(By.xpath("//a[contains(text(),'maxmiller+8@gmail.com')]")));
 
     }
 
