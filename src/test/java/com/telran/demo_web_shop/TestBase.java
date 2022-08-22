@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -77,7 +78,7 @@ public class TestBase {
 
 
 
-    public void loginWrongPssword() {
+    public void loginWrongPassword() {
         click(By.xpath("//a[contains(text(),'Log in')]"));
         type(By.xpath("//input[@id='Email']"), "maxmiller@gmail.com");
         type(By.xpath("//input[@id='Password']"), "Ss7654321");
@@ -91,6 +92,28 @@ public class TestBase {
         type(By.xpath("//input[@id='Password']"), "Max7654321$");
         click(By.xpath("//input[@id='RememberMe']"));
         click(By.cssSelector(".button-1.login-button"));
+    }
+
+    public void isSubscribe() {
+
+        click(By.id("newsletter-email"));
+        type(By.cssSelector("#newsletter-email"), "maxmiller@gmail.com");
+        click(By.cssSelector("#newsletter-subscribe-button"));
+
+    }
+
+    public void isSubscribeWithWrongEmail() {
+
+        click(By.id("newsletter-email"));
+        type(By.cssSelector("#newsletter-email"), "maxmiller@gmail");
+        click(By.cssSelector("#newsletter-subscribe-button"));
+
+    }
+
+    public void nopCommerceVoting() {
+        click(By.cssSelector("#pollanswers-2"));
+        click(By.cssSelector("#vote-poll-1"));
+
     }
 
     @AfterMethod(enabled = false)

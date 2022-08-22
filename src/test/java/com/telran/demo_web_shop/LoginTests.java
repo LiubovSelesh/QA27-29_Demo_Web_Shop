@@ -16,13 +16,13 @@ public class LoginTests extends TestBase{
     @Test
     public void loginUserPositiveTests() {
         login();
-        Assert.assertTrue(isElementPresent(By.xpath("//a[contains(text(),'maxmiller+8@gmail.com')]")));
+        Assert.assertTrue(isElementPresent(By.xpath("//a[contains(text(),'maxmiller@gmail.com')]")));
 
     }
 
     @Test
     public void loginUserNegativeTestsWrongPassword() {
-        loginWrongPssword();
+        loginWrongPassword();
         Assert.assertTrue(isElementPresent(By.xpath("//span[contains(text(),'Login was unsuccessful. Please correct the errors ')]")));
 
     }
@@ -30,7 +30,7 @@ public class LoginTests extends TestBase{
     @Test
     public void loginUserNegativeTestsWrongEmail() {
         loginWrongEmail();
-        Assert.assertTrue(isElementPresent(By.xpath("//li[contains(text(),'No customer account found')]")));
+        Assert.assertTrue(isElementPresent(By.xpath("//span[contains(text(),'Please enter a valid email address.')]")));
 
     }
 

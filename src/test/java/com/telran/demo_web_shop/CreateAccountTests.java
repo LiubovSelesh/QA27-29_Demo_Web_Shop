@@ -19,7 +19,9 @@ public class CreateAccountTests extends TestBase{
     public void registrationPositiveTests() {
         isRegistrationPresent();
 
-        Assert.assertTrue(isElementPresent(By.cssSelector(".center-2")));
+        Assert.assertTrue(isElementPresent(By.cssSelector(".nivo-main-image")));
+
+
     }
 
 }
